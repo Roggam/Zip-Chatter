@@ -20,8 +20,14 @@ const [isSignup, setIsSignup] = useState(true);
 
 const handleChange = (event) => {
     setForm({...form, [event.target.name]: event.target.value});
+    //console.log(form);
+}
+const handleSubmit = (event) => {
+    event.preventDefault();
+
     console.log(form);
 }
+
 //will change the state depending on the previous state
 const switchMode = () => {
     setIsSignup((prevIsSignup) => !prevIsSignup)  
@@ -32,7 +38,7 @@ const switchMode = () => {
          <div className='auth__form-container_fields'>
             <div className='auth__form-container_fields-content'>
                 <p>{isSignup ? 'Sign Up' : 'Sign In'}</p>
-                <form onSubmit={() => {}}>
+                <form onSubmit={handleSubmit}>
                     {isSignup && (
                      <div className='auth__form-container_fields-content_input'>
                         <label htmlFor='fullName'>Full Name</label>
