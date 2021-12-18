@@ -46,14 +46,31 @@ const CompanyHeader = () => (
                     type="team"
                     />
                )}
-               
-               Preview={(previewProps) => (
+                 Preview={(previewProps) => (
                 <TeamChannelPreview 
                 {...previewProps}
                 type="team"
                 />
                )}   
                />
+                <ChannelList // this component will display direct messages
+               filters={{}}
+               channelRenderFilterFn={() => {}}
+               List={ (listProps) => ( 
+                    <TeamChannelList
+                    {... listProps}
+                    type="messaging"
+                    />
+               )}
+               
+               Preview={(previewProps) => (
+                <TeamChannelPreview 
+                {...previewProps}
+                type="messaging"
+                />
+               )}   
+               />
+               
            </div>
         </>
     );
