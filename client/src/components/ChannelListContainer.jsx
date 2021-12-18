@@ -36,6 +36,24 @@ const CompanyHeader = () => (
            <SideBar />
            <div className='channel-list__list__wrapper'>
                <CompanyHeader/>
+               <ChannelSearch/>
+               <ChannelList
+               filters={{}}
+               channelRenderFilterFn={() => {}}
+               List={ (listProps) => ( //custom TeamChannelList component will get all props from ChannelList
+                    <TeamChannelList
+                    {... listProps}
+                    type="team"
+                    />
+               )}
+               
+               Preview={(previewProps) => (
+                <TeamChannelPreview 
+                {...previewProps}
+                type="team"
+                />
+               )}   
+               />
            </div>
         </>
     );
