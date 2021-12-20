@@ -19,7 +19,7 @@ const UserItem = ({ user, setSelectedUsers }) => {
     const [selected, setSelected] = useState(false)
 
     const handleSelect = () => {
-        if(selected) {
+        if(selected) { //filters out user if it was already clicked
             setSelectedUsers((prevUsers) => prevUsers.filter((prevUser) => prevUser !== user.id))
         } else {
             setSelectedUsers((prevUsers) => [...prevUsers, user.id])
