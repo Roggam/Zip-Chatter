@@ -18,17 +18,19 @@ const initialState = {
 
 const Auth = () => {
 const [form, setForm] = useState(initialState);    
-const [isSignup, setIsSignup] = useState(true);
+//state is set to signup page. changing state to false will display login page instead
+const [isSignup, setIsSignup] = useState(true); 
 
 const handleChange = (event) => {
     setForm({...form, [event.target.name]: event.target.value});
     //console.log(form);
 }
+
 const handleSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault(); // prevents page from reloading
 
     const {fullName, username, password, phoneNumber, avatarURL} = form;
-    const URL = 'http://localhost:5000/auth';
+    const URL = 'http://localhost:5000/auth'; // will changes this URL when i host the back-end
 
     const {data: { token, userId, hashedPassword}} = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`, {
      username, password, fullName, phoneNumber, avatarURL   
@@ -49,7 +51,8 @@ const handleSubmit = async (event) => {
 window.location.reload();
 }
 
-//will change the state depending on the previous state
+
+//will switch to  previous state
 const switchMode = () => {
     setIsSignup((prevIsSignup) => !prevIsSignup)  
 }
