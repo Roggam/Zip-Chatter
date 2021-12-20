@@ -55,7 +55,8 @@ const UserList = ({ setSelectedUsers }) => {
             
             try {
                 const response = await client.queryUsers(
-                    { id: { $ne: client.userID } }, // this will hide current user logged in from bein displayed in user list
+
+                    { id: { $ne: client.userID } }, // this will hide current user logged in from being displayed in user list because we can't message our self
                     { id: 1 },
                     { limit: 8 } 
                 );
