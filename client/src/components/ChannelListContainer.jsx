@@ -29,9 +29,19 @@ const CompanyHeader = () => (
     </div>
 
 )
+//filters by group
+const customChannelTeamFilter = (channels)=>{
+return channels.filters((channel) => channel.type === 'team');
+
+}
+//filters by direct message
+const customChannelMessagingFilter = (channels)=>{
+    return channels.filters((channel) => channel.type === 'messaging');
+    
+    }
 
 
-const ChannelListContainer = ({isCreating,setIsCreating,setCreateType,setIsEditing}) => {
+const ChannelListContent = ({isCreating,setIsCreating,setCreateType,setIsEditing}) => {
     const logout = () => {
         cookies.remove("token");
         cookies.remove('userId');
@@ -53,7 +63,7 @@ const ChannelListContainer = ({isCreating,setIsCreating,setCreateType,setIsEditi
                 <ChannelSearch />
                 <ChannelList
                     filters={{}}
-                    channelRenderFilterFn={() => { }}
+                    channelRenderFilterFn={customChannelTeamFilter}
                     List={(listProps) => ( //custom TeamChannelList component will get all props from ChannelList
                         <TeamChannelList
                             {...listProps}
@@ -73,7 +83,7 @@ const ChannelListContainer = ({isCreating,setIsCreating,setCreateType,setIsEditi
                 />
                 <ChannelList // this component will display direct messages
                     filters={{}}
-                    channelRenderFilterFn={() => { }}
+                    channelRenderFilterFn={customChannelMessagingFilter}
                     List={(listProps) => (
                         <TeamChannelList
                             {...listProps}
@@ -96,6 +106,10 @@ const ChannelListContainer = ({isCreating,setIsCreating,setCreateType,setIsEditi
             </div>
         </>
     );
+}
+
+const ChannelListContainer = ({setCreateType, setIsCreating, setIsEditing}) =>{
+
 }
 
 export default ChannelListContainer;
