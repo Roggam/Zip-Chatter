@@ -29,9 +29,9 @@ if (authToken) {
 }
 
 export const App = () => {
-const [createType, setCreateType] = useState("");
-const [isCreating, setIsCreating] = useState(false);
-const [isEditing, setIsEditing] = useState(false);
+    const [createType, setCreateType] = useState("");
+    const [isCreating, setIsCreating] = useState(false);
+    const [isEditing, setIsEditing] = useState(false);
 
     if (!authToken) return <Auth />
 
