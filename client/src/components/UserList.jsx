@@ -5,8 +5,8 @@ import { InviteIcon } from '../assets';
 
 const ListContainer = ({ children }) => {
     return (
-        <div className="user-list__container">
-            <div className="user-list__header">
+        <div className='user-list__container'>
+            <div className='user-list__header'>
                 <p>User</p>
                 <p>Invite</p>
             </div>
@@ -29,12 +29,12 @@ const UserItem = ({ user, setSelectedUsers }) => {
     }
 
     return (
-        <div className="user-item__wrapper" onClick={handleSelect}>
-            <div className="user-item__name-wrapper">
+        <div className='user-item__wrapper' onClick={handleSelect}>
+            <div className='user-item__name-wrapper'>
                 <Avatar image={user.image} name={user.fullName || user.id} size={32} />
-                <p className="user-item__name">{user.fullName || user.id}</p>
+                <p className='user-item__name'>{user.fullName || user.id}</p>
             </div>
-            {selected ? <InviteIcon /> : <div className="user-item__invite-empty" />}
+            {selected ? <InviteIcon /> : <div className='user-item__invite-empty' />}
         </div>
     )
 }
@@ -78,7 +78,7 @@ const UserList = ({ setSelectedUsers }) => {
     if(error) {
         return (
             <ListContainer>
-                <div className="user-list__message">
+                <div className='user-list__message'>
                     Error loading, please refresh and try again.
                 </div>
             </ListContainer>
@@ -88,7 +88,7 @@ const UserList = ({ setSelectedUsers }) => {
     if(listEmpty) {
         return (
             <ListContainer>
-                <div className="user-list__message">
+                <div className='user-list__message'>
                     No users found.
                 </div>
             </ListContainer>
@@ -97,7 +97,7 @@ const UserList = ({ setSelectedUsers }) => {
 
     return (
         <ListContainer>
-            {loading ? <div className="user-list__message">
+            {loading ? <div className='user-list__message'>
                 Loading users...
             </div> : (
                 users?.map((user, i) => (
