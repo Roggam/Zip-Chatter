@@ -43,7 +43,7 @@ const CreateChannel = ({ createType, setIsCreating }) => {
             setActiveChannels(newChannel);
 
         } catch (error) {
-        console.log(error);
+            console.log(error);
         }
     }
     return (

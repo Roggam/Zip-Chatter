@@ -3,31 +3,30 @@ import { ChannelList, useChatContext } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
 
 import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './';
-import ZipChatterIcon from '../assets/zipChatterIcon.png';
-import LogoutIcon from '../assets/logout.png';
+import zipChatterIcon from '../assets/zipChatterIcon.png'
+import LogoutIcon from '../assets/logout.png'
 
 const cookies = new Cookies();
 
 const SideBar = ({ logout }) => (
-    <div className='channel-list__sidebar'>
-        <div className='channel-list__sidebar__icon1'>
-            <div className='icon1__inner'>
-                <img src={ZipChatterIcon} alt='ZipChatter' width="30" />
+    <div className="channel-list__sidebar">
+        <div className="channel-list__sidebar__icon1">
+            <div className="icon1__inner">
+                <img src={zipChatterIcon} alt="zipChatterIcon" width="30" />
             </div>
         </div>
-        <div className='channel-list__sidebar__icon2'>
-            <div className='icon1__inner' onClick={logout}>
-                <img src={LogoutIcon} alt='Logout' width="30" />
+        <div className="channel-list__sidebar__icon2">
+            <div className="icon1__inner" onClick={logout}>
+                <img src={LogoutIcon} alt="Logout" width="30" />
             </div>
         </div>
-
     </div>
-)
+);
+
 const CompanyHeader = () => (
     <div className='channel-list__header'>
         <p className='channel-list__header__text'>Zip Chatter</p>
     </div>
-
 )
 //filters by group
 const customChannelTeamFilter = (channels) => {
@@ -38,8 +37,7 @@ const customChannelMessagingFilter = (channels) => {
     return channels.filter((channel) => channel.type === 'messaging');
 }
 
-
-const ChannelListContent = ({ isCreating, setIsCreating, setCreateType, setIsEditing }) => {
+const ChannelListContent = ({ isCreating, setIsCreating, setCreateType, setIsEditing, setToggleContainer }) => {
     const { client } = useChatContext();
 
     const logout = () => {
@@ -52,7 +50,6 @@ const ChannelListContent = ({ isCreating, setIsCreating, setCreateType, setIsEdi
         cookies.remove('phoneNumber');
 
         window.location.reload();
-
     }
 
     const filters = { members: { $in: [client.userID] } };
@@ -63,12 +60,12 @@ const ChannelListContent = ({ isCreating, setIsCreating, setCreateType, setIsEdi
             <SideBar logout={logout} />
             <div className='channel-list__list__wrapper'>
                 <CompanyHeader />
-                <ChannelSearch />
+                <ChannelSearch setToggleContainer={setToggleContainer} />
                 <ChannelList
                     filters={filters}
-                   channelRenderFilterFn={customChannelTeamFilter}
-                    
-                  List={(listProps) => ( //custom TeamChannelList component will get all props from ChannelList
+                    channelRenderFilterFn={customChannelTeamFilter}
+
+                    List={(listProps) => ( //custom TeamChannelList component will get all props from ChannelList
                         <TeamChannelList
                             {...listProps}
                             type="team"
@@ -76,11 +73,15 @@ const ChannelListContent = ({ isCreating, setIsCreating, setCreateType, setIsEdi
                             setIsCreating={setIsCreating}
                             setCreateType={setCreateType}
                             setIsEditing={setIsEditing}
+                            setToggleContainer={setToggleContainer}
                         />
                     )}
                     Preview={(previewProps) => (
                         <TeamChannelPreview
                             {...previewProps}
+                            setIsCreating={setIsCreating}
+                            setIsEditing={setIsEditing}
+                            setToggleContainer={setToggleContainer}
                             type="team"
                         />
                     )}
@@ -96,17 +97,19 @@ const ChannelListContent = ({ isCreating, setIsCreating, setCreateType, setIsEdi
                             setIsCreating={setIsCreating}
                             setCreateType={setCreateType}
                             setIsEditing={setIsEditing}
+                            setToggleContainer={setToggleContainer}
                         />
                     )}
-
                     Preview={(previewProps) => (
                         <TeamChannelPreview
                             {...previewProps}
+                            setIsCreating={setIsCreating}
+                            setIsEditing={setIsEditing}
+                            setToggleContainer={setToggleContainer}
                             type="messaging"
                         />
                     )}
                 />
-
             </div>
         </>
     );
@@ -114,6 +117,7 @@ const ChannelListContent = ({ isCreating, setIsCreating, setCreateType, setIsEdi
 
 const ChannelListContainer = ({ setCreateType, setIsCreating, setIsEditing }) => {
     const [toggleContainer, setToggleContainer] = useState(false);
+
     return (
         //first ChannelListContent component is for deskop
         //AND second ChannelListContent component is for mobile devices
@@ -128,11 +132,9 @@ const ChannelListContainer = ({ setCreateType, setIsCreating, setIsEditing }) =>
 
             <div className='channel-list__container-responsive'
                 style={{ left: toggleContainer ? "0%" : "-89%", backgroundColor: "#005fff" }}
-                >
-
+            >
                 <div className='channel-list__container-toggle' onClick={() => setToggleContainer((prevToggleContainer) => !prevToggleContainer)}>
                 </div>
-
                 <ChannelListContent
                     setIsCreating={setIsCreating}
                     setCreateType={setCreateType}
@@ -142,6 +144,7 @@ const ChannelListContainer = ({ setCreateType, setIsCreating, setIsEditing }) =>
             </div>
         </>
     )
+
 }
 
 export default ChannelListContainer;
