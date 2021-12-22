@@ -29,12 +29,12 @@ const handleChange = (event) => {
 const handleSubmit = async (event) => {
     event.preventDefault(); // prevents page from reloading
 
-    const {fullName, username, password, phoneNumber, avatarURL} = form;
+    const {username, password, phoneNumber, avatarURL} = form;
     const URL = 'http://localhost:5000/auth'; // will changes this URL when i host the back-end
 
-    const {data: { token, userId, hashedPassword}} = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`, {
-     username, password, fullName, phoneNumber, avatarURL   
-    });
+    const {data: { token, userId, hashedPassword, fullName} } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`, {
+     username, password, fullName: form.fullName, phoneNumber, avatarURL   
+    }); // now full Name from sign up form wll persist
 
     cookies.set('token', token);
     cookies.set('username', username);

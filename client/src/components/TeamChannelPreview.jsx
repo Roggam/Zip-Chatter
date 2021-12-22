@@ -25,7 +25,7 @@ const TeamChannelPreview = ({ setActiveChannel, setIsCreating, setIsEditing, set
                     name={members[0]?.user?.fullName || members[0]?.user?.id}
                     size={24}
                 />
-                <p>{members[0]?.user?.fullName || members[0]?.user?.id}</p>
+                <p>{members[0]?.user?.fullName || members[0]?.user?.id}</p> 
             </div>
         )
     }
