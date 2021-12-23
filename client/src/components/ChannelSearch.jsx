@@ -1,14 +1,37 @@
 import React, {useState, useEffect} from 'react';
-import { useChatContext } from 'stream-chat-react';
+import { useChatContext, useShouldForceScrollToBottom } from 'stream-chat-react';
 import{ SearchIcon } from '../assets/'
 
 const ChannelSearch = () => {
+const {client, setActiveChannel} = useChatContext();
 const [query, setQuery] = useState('');
 const [loading, setLoading] = useState(false);
+const [teamChannels, setTeamChannels] = useState([]);
+const [directChannels, setDirectChannels] = useState([]);
 
 const getChannels = async (text) => {
 try {
- //TODO : fetch channels   
+ //TODO : fetch channels  
+ const channelResponse = client.queryChannels({// $in finds channels where user logged in is in
+   type: 'team', 
+   name: {$autocomplete: text},
+    members: {$in: [client.userID]}
+ });
+ 
+ const userResponse = client.queryUsers({ // $ne excludes account logged in from finding it self when searching
+        id: {$ne: client.userID},
+        name: {$autocomplete: text}
+ });
+
+ const [channels, {users}] = await Promise.all([channelResponse, userResponse]);
+
+ if(channels.length){
+setTeamChannels(channels);
+}
+ if(users.length){
+    setDirectChannels(users);
+     }
+
 } catch (error) {
     setQuery('');
 }
