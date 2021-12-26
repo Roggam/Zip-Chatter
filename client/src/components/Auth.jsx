@@ -35,7 +35,7 @@ const handleSubmit = async (event) => {
     const {data: { token, userId, hashedPassword, fullName} } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`, {
      username, password, fullName: form.fullName, phoneNumber, avatarURL   
     }); // now full Name from sign up form wll persist
-
+    
     cookies.set('token', token);
     cookies.set('username', username);
     cookies.set('fullName', fullName);
