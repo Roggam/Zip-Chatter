@@ -27,7 +27,7 @@
     justify-content: center;
   
     padding: 2rem;
-    background: #248331;
+    background: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
   }
   
   .auth__form-container_image {
@@ -39,6 +39,7 @@
   .auth__form-container_image img {
     width: 100%;
     height: 100%;
+    object-fit:cover;
   }
   
   .auth__form-container_fields-content {
@@ -120,11 +121,11 @@
   
   .auth__form-container_fields-content_button button {
     border-radius: 4px;
-    background: #1a910f;
-    border: 1px solid #1d7c10;
+    background: #08AEEA;
+    border: 1px solid #08AEEA;
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 500;
+    font-weight: 800;
     padding: 0.7rem 1.2rem;
     outline: none;
     cursor: pointer;
@@ -132,7 +133,8 @@
   }
   
   .auth__form-container_fields-content_button button:hover {
-    background: #1fc92d;
+    background: #2AF598;
+    border: 1px solid #2AF598;
   }
   
   .auth__form-container_fields-account {
