@@ -30,7 +30,8 @@ const handleSubmit = async (event) => {
     event.preventDefault(); // prevents page from reloading
 
     const {username, password, phoneNumber, avatarURL} = form;
-    const URL = 'http://localhost:5000/auth'; // will changes this URL when i host the back-end
+    //const URL = 'http://localhost:5000/auth'; // will changes this URL when I host the back-end
+    const URL = 'https://zip-chatter.herokuapp.com/auth';
 
     const {data: { token, userId, hashedPassword, fullName} } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`, {
      username, password, fullName: form.fullName, phoneNumber, avatarURL   
