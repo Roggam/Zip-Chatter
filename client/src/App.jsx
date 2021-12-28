@@ -4,6 +4,7 @@ import { Chat } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
 
 import 'stream-chat-react/dist/css/index.css';
+
 import './App.css';
 
 import { ChannelListContainer, ChannelContainer, Auth } from './components'; //takes care of importing all components
@@ -27,6 +28,8 @@ if (authToken) {
 
     }, authToken);
 }
+
+
 
 export const App = () => {
     const [createType, setCreateType] = useState("");

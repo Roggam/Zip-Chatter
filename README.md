@@ -22,7 +22,7 @@ I will be using React, Node.js, [Stream API (#1 Chat API)](https://getstream.io)
      style="float: left; margin-right: 10px;" />
 
 ## Chat
-<img src="Zip-Chatter WireFrame/chat.png"
+<img src="UI-demo/chatting.gif"
      alt="chat"
      style="float: left; margin-right: 10px;" />     
 
