@@ -1815,12 +1815,16 @@ div.rta__autocomplete.str-chat__emojisearch {
   }
 }
 
+.str-chat__message-team-meta time{
+  z-index: 1;
+}
+
 @media screen and (max-width: 650px) {
   .channel-list__container-toggle {
     right: -3%;
   }
 
-  /*threads are now responsive on devices with a screen size of max 400px*/
+  /*threads are now responsive on devices with a screen size of max 650px*/
   .str-chat .str-chat__thread {
     background: white;
   }
@@ -1830,6 +1834,18 @@ div.rta__autocomplete.str-chat__emojisearch {
   top: 0;
   right: 0;
   z-index: 100;
+}
+.str-chat__message-replies-count-button{
+  z-index: 0;
+}
+.str-chat__message-team-meta time{
+  z-index: 0;
+}
+
+.emoji-mart-light[style]{
+  
+  width: 310px !important;
+  background: rgb(255, 255, 255);
 }
 /**/
 }
@@ -1851,7 +1867,22 @@ div.rta__autocomplete.str-chat__emojisearch {
   height: 100%;
   top: 0;
   right: 0;
+  z-index: 50;
+}
+​
+​
+.str-chat__message-replies-count-button{
+  z-index: 0;
+}
+
+.str-chat__message-team-meta time{
+  z-index: 0;
+}
+
+.emoji-mart-light[style]{
   z-index: 100;
+  width: 310px !important;
+  background: rgb(255, 255, 255);
 }
 /**/
 }
@@ -1859,5 +1890,13 @@ div.rta__autocomplete.str-chat__emojisearch {
 @media screen and (max-width: 320px) {
   .channel-list__sidebar {
     display: none;
+  }
+  .str-chat__message-team-meta time{
+    z-index: 0;
+  }
+  .emoji-mart-light[style]{
+    z-index: 100;
+    width: 310px !important;
+    background: rgb(255, 255, 255);
   }
 }
