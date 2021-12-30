@@ -1748,6 +1748,14 @@ div.rta__autocomplete.str-chat__emojisearch {
   padding: 10px;
 }
 
+.str-chat__message-team-meta time{
+  z-index: 1;
+}
+
+.str-chat__send-button  path {
+  fill: #08aeea ;
+}
+
 @media screen and (max-width: 960px) {
   .channel-list__container {
     display: none;
@@ -1813,11 +1821,24 @@ div.rta__autocomplete.str-chat__emojisearch {
     top: 100%;
     left: 5%;
   }
+
+  .str-chat__message-replies-count-button{
+    z-index: 0;
+  }
+  .str-chat__message-team-meta time{
+    z-index: 0;
+  }
+  
+  .emoji-mart-light[style]{
+    
+  
+    background: rgb(255, 255, 255);
+  }
+
+
 }
 
-.str-chat__message-team-meta time{
-  z-index: 1;
-}
+
 
 @media screen and (max-width: 650px) {
   .channel-list__container-toggle {
@@ -1833,8 +1854,11 @@ div.rta__autocomplete.str-chat__emojisearch {
   height: 100%;
   top: 0;
   right: 0;
-  z-index: 100;
+  z-index: 50;
 }
+
+
+
 .str-chat__message-replies-count-button{
   z-index: 0;
 }
@@ -1847,6 +1871,7 @@ div.rta__autocomplete.str-chat__emojisearch {
   width: 310px !important;
   background: rgb(255, 255, 255);
 }
+
 /**/
 }
 
@@ -1854,37 +1879,33 @@ div.rta__autocomplete.str-chat__emojisearch {
   .channel-preview__item.multi {
     width: 150px;
   }
-
   .channel-list__container-toggle {
     right: -5%;
   }
-/*threads are now responsive on devices with a screen size of max 400px*/
- .str-chat .str-chat__thread {
+  /*threads are now responsive on devices with a screen size of max 650px*/
+  .str-chat .str-chat__thread {
     background: white;
   }
-.str-chat__thread{
-  position: absolute;
-  height: 100%;
-  top: 0;
-  right: 0;
-  z-index: 50;
-}
-​
-​
-.str-chat__message-replies-count-button{
-  z-index: 0;
-}
+  .str-chat__thread{
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 50;
+  }
+  .str-chat__message-replies-count-button{
+    z-index: 0;
+  }
+  .str-chat__message-team-meta time{
+    z-index: 0;
+  }
+  .emoji-mart-light[style]{
+    z-index: 100;
+    width: 310px !important;
+    background: rgb(255, 255, 255);
+  }
 
-.str-chat__message-team-meta time{
-  z-index: 0;
-}
 
-.emoji-mart-light[style]{
-  z-index: 100;
-  width: 310px !important;
-  background: rgb(255, 255, 255);
-}
-/**/
 }
 
 @media screen and (max-width: 320px) {
