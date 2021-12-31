@@ -21,7 +21,9 @@ const [form, setForm] = useState(initialState);
 //state is set to signup page. changing state to false will display login page instead
 const [isSignup, setIsSignup] = useState(true); 
 
+
 const handleChange = (event) => {
+    
     setForm({...form, [event.target.name]: event.target.value});
     //console.log(form);
 }

@@ -1842,7 +1842,7 @@ div.rta__autocomplete.str-chat__emojisearch {
 
 @media screen and (max-width: 650px) {
   .channel-list__container-toggle {
-    right: -3%;
+    right: -4%;
   }
 
   /*threads are now responsive on devices with a screen size of max 650px*/
@@ -1857,6 +1857,17 @@ div.rta__autocomplete.str-chat__emojisearch {
   z-index: 50;
 }
 
+.str-chat__thread-list {
+  min-height: 205px;
+}
+.str-chat__small-message-input__wrapper{
+  top: 7px;
+  bottom: 100%;
+}
+
+.str-chat__thread-header{
+  position: sticky;
+}
 
 
 .str-chat__message-replies-count-button{
