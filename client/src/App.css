@@ -1092,7 +1092,7 @@ body {
 
 .str-chat__message-team-meta time {
   visibility: visible;
-  z-index: 2;
+  z-index: 0;
   font-family: Helvetica Neue, sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -1121,7 +1121,7 @@ body {
 }
 
 .str-chat__message-replies-count-button {
-  z-index: 2;
+  z-index: 0;
   display: flex;
   /* justify-content: flex-end; */
   font-family: Helvetica Neue, sans-serif;
@@ -1749,11 +1749,18 @@ div.rta__autocomplete.str-chat__emojisearch {
 }
 
 .str-chat__message-team-meta time{
-  z-index: 1;
+  z-index: 0;
 }
 
 .str-chat__send-button  path {
   fill: #08aeea ;
+}
+.str-chat__thread{
+  z-index: 50;
+}
+.emoji-mart-light[style]{
+     
+background: rgb(255, 255, 255);
 }
 
 @media screen and (max-width: 960px) {
@@ -1831,7 +1838,7 @@ div.rta__autocomplete.str-chat__emojisearch {
   
   .emoji-mart-light[style]{
     
-  
+    z-index: 100;
     background: rgb(255, 255, 255);
   }
 
