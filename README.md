@@ -10,42 +10,50 @@ I will be using React, Node.js, [Stream API (#1 Chat API)](https://getstream.io)
 #
 # Prototype Images (Work in progress)
 
-## Sign Up Page
-<img src="UI-demo/signup-page.gif"
+<h2>Sign Up Page</h2>
+<img src="https://i.ibb.co/g9q87dr/signup-page.gif"
      alt="Sign Up"
-     style="float: left; margin-right: 10px;" />
+     style="display: block  float: left; margin-right: 10px;" />
 
-
+<br>
 <h2> Sign In Page <h2>
-<img src="UI-demo/signin.gif"
+<img src="https://i.ibb.co/WzxgDq6/signin.gif"
      alt="Sign in"
-     style="float: left; margin-right: 10px;" />
+     style="display: block  float: left; margin-right: 10px;" />
 
-## Chat
-<img src="UI-demo/chatting.gif"
+<br>
+<h2>Chat</h2>
+<img src="https://i.ibb.co/9HhB88S/chatting.gif"
      alt="chat"
-     style="float: left; margin-right: 10px;" />     
+     style="display: block  float: left; margin-right: 10px;" />     
 
-## Create new Channel
-<img src="Zip-Chatter WireFrame/create-new-channel.png"
+<br>
+<h2>Create new Channel</h2>
+<img src="https://i.ibb.co/tCd5wmn/create-channel.gif"
      alt="create new channel"
-     style="float: left; margin-right: 10px;" />
+     style="display: block  float: left; margin-right: 10px;" />
 
-## Edit Channel
-<img src="Zip-Chatter WireFrame/edit-channel.png"
+<br>
+<h2> Edit Channel </h2>
+<img src="https://i.ibb.co/VpBHGBs/edit-channel.gif"
      alt="create new channel"
-     style="float: left; margin-right: 10px;" />
+     style="display: block  float: left; margin-right: 10px;" />
 
-## Direct Message
-<img src="Zip-Chatter WireFrame/direct-messages.png"
+<br>
+<h2> Direct Message </h2>
+<img src="https://i.ibb.co/7nZRjBr/direct-message.gif"
      alt="direct message"
-     style="float: left; margin-right: 10px;" />  
+     style="display: block float: left; margin-right: 10px;" />  
 
-## Thread
-<img src="Zip-Chatter WireFrame/thread.png"
+
+<br>
+<h2>Thread</h2>
+<img src="https://i.ibb.co/W6TvP2h/thread.gif"
      alt="Sign Up"
-     style="float: left; margin-right: 10px;" />     
+     style="display: block float: left; margin-right: 10px;" />     
 
 
+<br>
+<h2> Mobile Version </h2>
 
-  
+<img src="https://i.ibb.co/Xp619tK/mobile-version.gif" alt="mobile-version" >
