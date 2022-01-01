@@ -11,9 +11,7 @@ I will be using React, Node.js, [Stream API (#1 Chat API)](https://getstream.io)
 # Prototype Images (Work in progress)
 
 <h2>Sign Up Page</h2>
-<img src="https://i.ibb.co/g9q87dr/signup-page.gif"
-     alt="Sign Up"
-     style="display: block  float: left; margin-right: 10px;" />
+<img src="https://i.ibb.co/g9q87dr/signup-page.gif" alt="signup-page" >
 
 <br>
 <h2> Sign In Page <h2>
