@@ -11,11 +11,13 @@ I will be using React, Node.js, [Stream API (#1 Chat API)](https://getstream.io)
 # Prototype Images (Work in progress)
 
 <h2>Sign Up Page</h2>
-<img src="https://i.ibb.co/g9q87dr/signup-page.gif" alt="signup-page" >
+<img src="https://i.ibb.co/jz7fyn5/sign-up.gif"
+     alt="Sign in"
+     style="display: block  float: left; margin-right: 10px;" />
 
 <br>
 <h2> Sign In Page <h2>
-<img src="https://i.ibb.co/WzxgDq6/signin.gif"
+<img src="https://i.ibb.co/Pc9dQjJ/sign-in.gif"
      alt="Sign in"
      style="display: block  float: left; margin-right: 10px;" />
 
