@@ -7,8 +7,10 @@ After a simple signup process, you’ll be able to invite your team to join and 
 
 I will be using React, Node.js, [Stream API (#1 Chat API)](https://getstream.io), [Heroku(back-end)](https://www.heroku.com/) and [Netlify(front-end)](https://www.netlify.com/)
 
+[ZpChatter Live Site(API expires 1/17/22)](https://zipchatter.netlify.app/)
+
 #
-# Prototype Images (Work in progress)
+# Prototype Images 
 
 <h2>Sign Up Page</h2>
 <img src="https://i.ibb.co/1nnMQXs/sign-up-page.gif"
@@ -57,3 +59,5 @@ I will be using React, Node.js, [Stream API (#1 Chat API)](https://getstream.io)
 <h2> Mobile Version </h2>
 
 <img src="https://i.ibb.co/Xp619tK/mobile-version.gif" alt="mobile-version" >
+
+
